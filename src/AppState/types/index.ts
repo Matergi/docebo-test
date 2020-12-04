@@ -2,16 +2,9 @@ import type {ScreenName} from 'router';
 
 type REST = 'GET' | 'POST' | 'PUT' | 'DELETE';
 
-export type SearchUser = {
-  id: string;
-  username: string;
-  avatar: string;
-  url: string;
-  type: string;
-};
-
 export type DetailRequest = {
   url: string;
+  params?: any;
   query?: any;
   method: REST;
   dispatch: any;
@@ -27,9 +20,40 @@ export type Action = {
   detail?: any;
 };
 
+export type SearchUser = {
+  id: string;
+  username: string;
+  avatar: string;
+  url: string;
+  type: string;
+};
+
+export type User = {
+  id: string;
+  username: string;
+  avatar: string;
+  url: string;
+  type: string;
+  company: string;
+};
+
+export type Repository = {
+  id: string;
+  name: string;
+  fullName: string;
+  owner: {
+    username: string;
+    avatar: string;
+  };
+  description: string;
+};
+
 export type State = {
   version: string;
   screen: ScreenName;
   loading: Array<string>;
   searchUsers: Array<SearchUser>;
+  userSelectedId?: string;
+  userSelected?: User;
+  repositories: Array<Repository>;
 };

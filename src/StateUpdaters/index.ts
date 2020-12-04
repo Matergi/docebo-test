@@ -1,4 +1,12 @@
 import {ChangeScreenForSideEffect, StartLoading, StopLoading} from './screen';
-import {LoadSearchUsers} from './users';
+import {LoadSearchUsers, SelectUser, LoadUser, LoadRepositories} from './users';
 
-export {ChangeScreenForSideEffect, StartLoading, StopLoading, LoadSearchUsers};
+export {
+  ChangeScreenForSideEffect,
+  StartLoading,
+  StopLoading,
+  LoadSearchUsers,
+  SelectUser,
+  LoadUser,
+  LoadRepositories,
+};

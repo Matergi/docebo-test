@@ -30,8 +30,6 @@ export default async (detail: DetailRequest): Promise<any> => {
     },
   };
 
-  detail.debug && console.log('options', options);
-
   let {url} = detail;
   if (detail.query) {
     url = Object.keys(detail.query).reduce(
@@ -51,6 +49,13 @@ export default async (detail: DetailRequest): Promise<any> => {
       `${url}?`,
     );
   }
+
+  detail.params &&
+    Object.keys(detail.params).forEach((key) => {
+      url = url.replace(`{${key}}`, detail.params[key]);
+    });
+
+  detail.debug && console.log('request', {url, options});
 
   const result = await fetch(url, options);
   const response = await result.json();

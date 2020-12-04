@@ -3,6 +3,7 @@ import {SafeAreaView, StyleSheet, ScrollView} from 'react-native';
 import {Text, Input, Press} from 'elements';
 import {connect} from 'react-redux';
 import {searchUsersSE, changeScreenSE} from 'sagaEffects';
+import {SelectUser} from 'stateUpdaters';
 import screens from 'router';
 import type {State, SearchUser} from 'types';
 import type {ScreenName} from 'router';
@@ -10,7 +11,7 @@ import type {ScreenName} from 'router';
 interface Props {
   users: Array<SearchUser>;
   searchUsers: (username: string) => void;
-  changeScreen: (screen: ScreenName, params: any) => void;
+  changeScreen: (screen: ScreenName, idUser: string) => void;
 }
 
 const SearchUserScreen = ({searchUsers, users, changeScreen}: Props) => (
@@ -29,9 +30,7 @@ const SearchUserScreen = ({searchUsers, users, changeScreen}: Props) => (
           key={user.id}
           style={styles.user}
           onPress={() => {
-            changeScreen(screens.profile, {
-              id: user.id,
-            });
+            changeScreen(screens.profile, user.username);
           }}>
           <Text>{user.username}</Text>
         </Press>
@@ -63,8 +62,10 @@ const mapStateToProps = (state: State) => ({
 
 const mapDispatchToProps = (dispatch: any) => ({
   searchUsers: (username: string) => dispatch(searchUsersSE(username)),
-  changeScreen: (screen: ScreenName, params: any) =>
-    dispatch(changeScreenSE(screen, params, false)),
+  changeScreen: (screen: ScreenName, idUser: string) => {
+    dispatch(SelectUser(idUser));
+    dispatch(changeScreenSE(screen, {}, false));
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchUserScreen);

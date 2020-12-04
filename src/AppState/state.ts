@@ -5,6 +5,7 @@ let state: State = {
   screen: 'SearchUser',
   loading: [],
   searchUsers: [],
+  repositories: [],
 };
 
 export default state;
