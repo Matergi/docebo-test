@@ -1,8 +1,8 @@
 import React from 'react';
-import {TouchableOpacity, ViewStyle} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 
 interface Props {
-  style?: ViewStyle;
+  style?: any;
   children?: any;
   onPress?: () => void;
 }

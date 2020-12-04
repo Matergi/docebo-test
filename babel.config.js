@@ -13,8 +13,12 @@ module.exports = {
           stateUpdaters: './src/StateUpdaters',
           sagaEffects: './src/SagaEffects',
           reducer: './src/AppState/reducer',
+          dimensions: './src/Resources/Dimensions',
+          images: './src/Resources/Images',
+          themes: './src/Resources/Themes',
         },
       },
     ],
+    'babel-plugin-inline-import',
   ],
 };

@@ -6,11 +6,11 @@ const fontFamilyiOS = 'Nexa';
 
 interface Props {
   children: string;
-  fontScaling?: boolean;
+  style?: any;
 }
 
-const TextElement = ({children}: Props) => (
-  <Text style={styles.text}>{children}</Text>
+const TextElement = ({children, style}: Props) => (
+  <Text style={[styles.text, style]}>{children}</Text>
 );
 
 export const font =

@@ -1,11 +1,10 @@
 import React from 'react';
-import {View} from 'react-native';
-import {Text} from 'elements';
+import {ScreenWithHeader, Text} from 'elements';
 
 const Profile = () => (
-  <View>
+  <ScreenWithHeader title="Profile">
     <Text>Profile</Text>
-  </View>
+  </ScreenWithHeader>
 );
 
 export default Profile;
