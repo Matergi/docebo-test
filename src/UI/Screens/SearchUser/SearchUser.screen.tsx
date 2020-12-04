@@ -1,18 +1,20 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, ScrollView, View} from 'react-native';
-import {Text, Input} from 'elements';
+import {SafeAreaView, StyleSheet, ScrollView} from 'react-native';
+import {Text, Input, Press} from 'elements';
 import {connect} from 'react-redux';
+import {searchUsersSE, changeScreenSE} from 'sagaEffects';
+import screens from 'router';
 import type {State, SearchUser} from 'types';
-import {searchUsersSE} from 'sagaEffects';
+import type {ScreenName} from 'router';
 
 interface Props {
   users: Array<SearchUser>;
   searchUsers: (username: string) => void;
+  changeScreen: (screen: ScreenName, params: any) => void;
 }
 
-const SearchUserScreen = ({searchUsers, users}: Props) => (
+const SearchUserScreen = ({searchUsers, users, changeScreen}: Props) => (
   <SafeAreaView>
-    <Text>SearchUser</Text>
     <Input
       style={styles.search}
       onChange={(username) => {
@@ -23,9 +25,16 @@ const SearchUserScreen = ({searchUsers, users}: Props) => (
     />
     <ScrollView>
       {users.map((user) => (
-        <View key={user.id}>
+        <Press
+          key={user.id}
+          style={styles.user}
+          onPress={() => {
+            changeScreen(screens.profile, {
+              id: user.id,
+            });
+          }}>
           <Text>{user.username}</Text>
-        </View>
+        </Press>
       ))}
     </ScrollView>
   </SafeAreaView>
@@ -36,6 +45,16 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 50,
   },
+  user: {
+    height: 60,
+    marginRight: 10,
+    marginLeft: 10,
+    marginTop: 7,
+    padding: 10,
+    backgroundColor: '#eaeaea',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
 });
 
 const mapStateToProps = (state: State) => ({
@@ -44,6 +63,8 @@ const mapStateToProps = (state: State) => ({
 
 const mapDispatchToProps = (dispatch: any) => ({
   searchUsers: (username: string) => dispatch(searchUsersSE(username)),
+  changeScreen: (screen: ScreenName, params: any) =>
+    dispatch(changeScreenSE(screen, params, false)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchUserScreen);

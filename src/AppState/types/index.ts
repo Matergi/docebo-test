@@ -24,6 +24,7 @@ export type Action = {
   type: string;
   updateState: (state: State) => State;
   request?: DetailRequest;
+  detail?: any;
 };
 
 export type State = {
