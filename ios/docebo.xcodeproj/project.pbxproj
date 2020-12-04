@@ -20,6 +20,22 @@
 		9E282BE4D4ADFBF83BA25A67 /* libPods-docebo-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D75F07047D5B9E216D7ACF4 /* libPods-docebo-tvOSTests.a */; };
 		B75FFB13F89E10BF5BCA82BA /* libPods-docebo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 420805038DDA580E2CDDDCB8 /* libPods-docebo.a */; };
 		FF7BA1DB095D03F12FC0616A /* libPods-docebo-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B7DE61760B995CB34BB6D1 /* libPods-docebo-tvOS.a */; };
+		068A213E72324AED8EA862D2 /* Nexa-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB4A177F036B4975AA7ED550 /* Nexa-Black.ttf */; };
+		CE4B6D4D508F45F48B32DBC9 /* Nexa-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEE297D807AE42D896B4CAE7 /* Nexa-BlackItalic.ttf */; };
+		34965CBF2ABA42068B8FAA13 /* Nexa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E5AEF6918394C099F97DD5A /* Nexa-Bold.ttf */; };
+		FB600DD0B8BF4039B6798B64 /* Nexa-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9944C2A8617641DF9186F465 /* Nexa-BoldItalic.ttf */; };
+		46203DA7832744B9BA3C1CA8 /* Nexa-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8D6687336394D2682759DB6 /* Nexa-Book.ttf */; };
+		EAAE9C7F351947B69AA09235 /* Nexa-BookItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3680944581E84BDF82D3D9A4 /* Nexa-BookItalic.ttf */; };
+		FB6BA264510F4728A2D674BA /* Nexa-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D60CD99AC5F744C9A1D68639 /* Nexa-Heavy.ttf */; };
+		898C0593DE8D4068B9C2A0C3 /* Nexa-HeavyItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE1D76CCA2584E06B27733A3 /* Nexa-HeavyItalic.ttf */; };
+		FA4773E4F9E84C7BA8A02EB9 /* Nexa-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87D4E0650D3D46C2888D87F2 /* Nexa-Italic.ttf */; };
+		7BCD6F9784F74391B030BAA1 /* Nexa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51378582ECCA4CF4937809D7 /* Nexa-Light.ttf */; };
+		AC7B56B2D2B741BA8F1137C2 /* Nexa-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B73944357C747D394DD9332 /* Nexa-LightItalic.ttf */; };
+		5A80FE271BDD4088BC52484A /* Nexa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CC2EBA0FB847A5B6985AEA /* Nexa-Regular.ttf */; };
+		E8A23A60C38D43DEB5519462 /* Nexa-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D32453DCCE18468B92691410 /* Nexa-Thin.ttf */; };
+		6A0CCD797A604F73B8498B1B /* Nexa-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F99EBEB912C8445ABEA3CE41 /* Nexa-ThinItalic.ttf */; };
+		774EE2EF57254E39B1EEC88C /* Nexa-XBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E488B2A4C62E4682B5DEBA64 /* Nexa-XBold.ttf */; };
+		1FAE506F60224EAD81356FCA /* Nexa-XBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7227BD3D0DB94D8A953C473D /* Nexa-XBoldItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +83,22 @@
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F0C6138DE8C699996B9F78FC /* Pods-docebo-doceboTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-docebo-doceboTests.debug.xcconfig"; path = "Target Support Files/Pods-docebo-doceboTests/Pods-docebo-doceboTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F38AD9F6E8B9E27D60C09E02 /* Pods-docebo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-docebo.debug.xcconfig"; path = "Target Support Files/Pods-docebo/Pods-docebo.debug.xcconfig"; sourceTree = "<group>"; };
+		DB4A177F036B4975AA7ED550 /* Nexa-Black.ttf */ = {isa = PBXFileReference; name = "Nexa-Black.ttf"; path = "../src/Resources/Fonts/Nexa-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FEE297D807AE42D896B4CAE7 /* Nexa-BlackItalic.ttf */ = {isa = PBXFileReference; name = "Nexa-BlackItalic.ttf"; path = "../src/Resources/Fonts/Nexa-BlackItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6E5AEF6918394C099F97DD5A /* Nexa-Bold.ttf */ = {isa = PBXFileReference; name = "Nexa-Bold.ttf"; path = "../src/Resources/Fonts/Nexa-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9944C2A8617641DF9186F465 /* Nexa-BoldItalic.ttf */ = {isa = PBXFileReference; name = "Nexa-BoldItalic.ttf"; path = "../src/Resources/Fonts/Nexa-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A8D6687336394D2682759DB6 /* Nexa-Book.ttf */ = {isa = PBXFileReference; name = "Nexa-Book.ttf"; path = "../src/Resources/Fonts/Nexa-Book.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3680944581E84BDF82D3D9A4 /* Nexa-BookItalic.ttf */ = {isa = PBXFileReference; name = "Nexa-BookItalic.ttf"; path = "../src/Resources/Fonts/Nexa-BookItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D60CD99AC5F744C9A1D68639 /* Nexa-Heavy.ttf */ = {isa = PBXFileReference; name = "Nexa-Heavy.ttf"; path = "../src/Resources/Fonts/Nexa-Heavy.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EE1D76CCA2584E06B27733A3 /* Nexa-HeavyItalic.ttf */ = {isa = PBXFileReference; name = "Nexa-HeavyItalic.ttf"; path = "../src/Resources/Fonts/Nexa-HeavyItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		87D4E0650D3D46C2888D87F2 /* Nexa-Italic.ttf */ = {isa = PBXFileReference; name = "Nexa-Italic.ttf"; path = "../src/Resources/Fonts/Nexa-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		51378582ECCA4CF4937809D7 /* Nexa-Light.ttf */ = {isa = PBXFileReference; name = "Nexa-Light.ttf"; path = "../src/Resources/Fonts/Nexa-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3B73944357C747D394DD9332 /* Nexa-LightItalic.ttf */ = {isa = PBXFileReference; name = "Nexa-LightItalic.ttf"; path = "../src/Resources/Fonts/Nexa-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		84CC2EBA0FB847A5B6985AEA /* Nexa-Regular.ttf */ = {isa = PBXFileReference; name = "Nexa-Regular.ttf"; path = "../src/Resources/Fonts/Nexa-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D32453DCCE18468B92691410 /* Nexa-Thin.ttf */ = {isa = PBXFileReference; name = "Nexa-Thin.ttf"; path = "../src/Resources/Fonts/Nexa-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F99EBEB912C8445ABEA3CE41 /* Nexa-ThinItalic.ttf */ = {isa = PBXFileReference; name = "Nexa-ThinItalic.ttf"; path = "../src/Resources/Fonts/Nexa-ThinItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E488B2A4C62E4682B5DEBA64 /* Nexa-XBold.ttf */ = {isa = PBXFileReference; name = "Nexa-XBold.ttf"; path = "../src/Resources/Fonts/Nexa-XBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7227BD3D0DB94D8A953C473D /* Nexa-XBoldItalic.ttf */ = {isa = PBXFileReference; name = "Nexa-XBoldItalic.ttf"; path = "../src/Resources/Fonts/Nexa-XBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +197,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				FDCC91EC4DC7BA3EF1D5D0F1 /* Pods */,
+				BEB4DA1A0BE04D0FA64DE38A /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -197,6 +230,30 @@
 			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		BEB4DA1A0BE04D0FA64DE38A /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				DB4A177F036B4975AA7ED550 /* Nexa-Black.ttf */,
+				FEE297D807AE42D896B4CAE7 /* Nexa-BlackItalic.ttf */,
+				6E5AEF6918394C099F97DD5A /* Nexa-Bold.ttf */,
+				9944C2A8617641DF9186F465 /* Nexa-BoldItalic.ttf */,
+				A8D6687336394D2682759DB6 /* Nexa-Book.ttf */,
+				3680944581E84BDF82D3D9A4 /* Nexa-BookItalic.ttf */,
+				D60CD99AC5F744C9A1D68639 /* Nexa-Heavy.ttf */,
+				EE1D76CCA2584E06B27733A3 /* Nexa-HeavyItalic.ttf */,
+				87D4E0650D3D46C2888D87F2 /* Nexa-Italic.ttf */,
+				51378582ECCA4CF4937809D7 /* Nexa-Light.ttf */,
+				3B73944357C747D394DD9332 /* Nexa-LightItalic.ttf */,
+				84CC2EBA0FB847A5B6985AEA /* Nexa-Regular.ttf */,
+				D32453DCCE18468B92691410 /* Nexa-Thin.ttf */,
+				F99EBEB912C8445ABEA3CE41 /* Nexa-ThinItalic.ttf */,
+				E488B2A4C62E4682B5DEBA64 /* Nexa-XBold.ttf */,
+				7227BD3D0DB94D8A953C473D /* Nexa-XBoldItalic.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -342,6 +399,22 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				068A213E72324AED8EA862D2 /* Nexa-Black.ttf in Resources */,
+				CE4B6D4D508F45F48B32DBC9 /* Nexa-BlackItalic.ttf in Resources */,
+				34965CBF2ABA42068B8FAA13 /* Nexa-Bold.ttf in Resources */,
+				FB600DD0B8BF4039B6798B64 /* Nexa-BoldItalic.ttf in Resources */,
+				46203DA7832744B9BA3C1CA8 /* Nexa-Book.ttf in Resources */,
+				EAAE9C7F351947B69AA09235 /* Nexa-BookItalic.ttf in Resources */,
+				FB6BA264510F4728A2D674BA /* Nexa-Heavy.ttf in Resources */,
+				898C0593DE8D4068B9C2A0C3 /* Nexa-HeavyItalic.ttf in Resources */,
+				FA4773E4F9E84C7BA8A02EB9 /* Nexa-Italic.ttf in Resources */,
+				7BCD6F9784F74391B030BAA1 /* Nexa-Light.ttf in Resources */,
+				AC7B56B2D2B741BA8F1137C2 /* Nexa-LightItalic.ttf in Resources */,
+				5A80FE271BDD4088BC52484A /* Nexa-Regular.ttf in Resources */,
+				E8A23A60C38D43DEB5519462 /* Nexa-Thin.ttf in Resources */,
+				6A0CCD797A604F73B8498B1B /* Nexa-ThinItalic.ttf in Resources */,
+				774EE2EF57254E39B1EEC88C /* Nexa-XBold.ttf in Resources */,
+				1FAE506F60224EAD81356FCA /* Nexa-XBoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
