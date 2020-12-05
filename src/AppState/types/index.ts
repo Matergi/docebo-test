@@ -35,17 +35,19 @@ export type User = {
   url: string;
   type: string;
   company: string;
+  email: string;
+  location: string;
 };
 
 export type Repository = {
   id: string;
   name: string;
   fullName: string;
-  owner: {
-    username: string;
-    avatar: string;
-  };
+  owner: User;
   description: string;
+  star: number;
+  language: string;
+  url: string;
 };
 
 export type State = {

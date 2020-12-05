@@ -1,7 +1,7 @@
 import {select, put, takeLatest} from 'redux-saga/effects';
 import Dependencies from 'dependencies';
 import {LoadRepositories} from 'stateUpdaters';
-import type {Action, State, Repository} from 'types';
+import type {Action, State, Repository, User} from 'types';
 
 function* actionRepositories(action: Action) {
   try {
@@ -19,16 +19,31 @@ function* actionRepositories(action: Action) {
     });
 
     const repositoriesForState: Array<Repository> = repositories
-      ? repositories.map((repository: any) => ({
-          id: repository.id,
-          name: repository.name,
-          fullName: repository.full_name,
-          owner: {
+      ? repositories.map((repository: any) => {
+          const owner: User = {
+            id: repository.owner.id,
             username: repository.owner.login,
             avatar: repository.owner.avatar_url,
-          },
-          description: repository.description,
-        }))
+            url: repository.owner.url,
+            type: repository.owner.type,
+            company: repository.owner.company,
+            email: repository.owner.email,
+            location: repository.owner.location,
+          };
+
+          const repositoryForState: Repository = {
+            id: repository.id,
+            name: repository.name,
+            fullName: repository.full_name,
+            owner,
+            description: repository.description,
+            star: repository.stargazers_count,
+            language: repository.language,
+            url: repository.html_url,
+          };
+
+          return repositoryForState;
+        })
       : [];
 
     yield put(LoadRepositories(repositoriesForState));

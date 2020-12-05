@@ -1,8 +1,8 @@
 import React from 'react';
 import {Text, Platform, StyleSheet} from 'react-native';
 
-const fontFamilyAndroid = 'Nexa';
-const fontFamilyiOS = 'Nexa';
+const fontFamilyAndroid = 'ProximaNova-Semibold';
+const fontFamilyiOS = 'ProximaNova-Semibold';
 
 interface Props {
   children: string;

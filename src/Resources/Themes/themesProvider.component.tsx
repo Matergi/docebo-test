@@ -37,7 +37,7 @@ export default ThemeProvider;
 
 /*
 Change Theme:
-import ThemeContext, {ThemeCustomer} from 'themes';
+import ThemeContext from 'themes';
 
 ...
 
@@ -47,7 +47,7 @@ changeTheme(ThemeCustomer);
 
 /*
 Use Theme:
-import ThemeContext, {ThemeCustomer} from 'themes';
+import ThemeContext from 'themes';
 
 ...
 

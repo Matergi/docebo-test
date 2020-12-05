@@ -25,6 +25,8 @@ function* actionUserInfo(action: Action) {
         url: user.url,
         type: user.type,
         company: user.company,
+        email: user.email,
+        location: user.location,
       }),
     );
   } catch (e) {
