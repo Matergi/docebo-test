@@ -8,8 +8,11 @@ const getHeader = {
   },
 };
 
-export default async (detail: DetailRequest): Promise<any> => {
-  detail.dispatch && detail.dispatch(StartLoading(detail.loadingId));
+function* request(detail: DetailRequest): any {
+  if (detail.dispatch) {
+    yield detail.dispatch(StartLoading(detail.loadingId));
+  }
+
   let options = {};
 
   switch (detail.method) {
@@ -68,15 +71,19 @@ export default async (detail: DetailRequest): Promise<any> => {
 
   detail.debug && console.log('request', {url, options});
 
-  const result = await fetch(url, options);
-  const response = await result.json();
-  detail.dispatch && detail.dispatch(StopLoading(detail.loadingId));
+  const result = yield fetch(url, options);
+  const response = yield result.json();
+  if (detail.dispatch) {
+    yield detail.dispatch(StopLoading(detail.loadingId));
+  }
 
   detail.debug && console.log('response', response);
 
-  if (response.errors != null) {
+  if (response.errors != null || response.message) {
     throw new Error(response.message);
   }
 
   return response;
-};
+}
+
+export default request;

@@ -53,7 +53,7 @@ export type Repository = {
 export type State = {
   version: string;
   screen: ScreenName;
-  loading: Array<string>;
+  loadingIds: Array<string>;
   searchUsers: Array<SearchUser>;
   userSelectedId?: string;
   userSelected?: User;

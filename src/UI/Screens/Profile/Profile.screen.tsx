@@ -5,6 +5,7 @@ import {Repository, State, User} from 'types';
 import {connect} from 'react-redux';
 import {userInfoSE, repositoriesSE} from 'sagaEffects';
 import ThemeContext from 'themes';
+import strings from 'strings';
 
 interface Props {
   userSelected?: User;
@@ -27,9 +28,12 @@ const Profile = ({
   }, []);
 
   return (
-    <ScreenWithHeader title={userSelected ? userSelected.username : 'Profile'}>
+    <ScreenWithHeader
+      title={
+        userSelected ? userSelected.username : strings.get().profile.title
+      }>
       {userSelected && (
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.page}>
             <View style={[styles.sectionProfile, theme.shadow]}>
               <Image
@@ -77,7 +81,8 @@ const Profile = ({
                       }}>
                       <Text style={theme.text.h6}>{repository.name}</Text>
                       <Text style={theme.text.body2}>
-                        {repository.description ?? 'no description'}
+                        {repository.description ??
+                          strings.get().profile.noDescription}
                       </Text>
                       <Text style={[theme.text.body2, styles.repositoryInfo]}>
                         {`${repository.language}   ${repository.star} ⭐`}

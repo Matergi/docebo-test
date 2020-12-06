@@ -1,5 +1,5 @@
 import {select, put, takeLatest} from 'redux-saga/effects';
-import {LoadSearchUsers} from 'stateUpdaters';
+import {LoadSearchUsers, StopLoading} from 'stateUpdaters';
 import Dependencies from 'dependencies';
 import type {Action, SearchUser, State} from 'types';
 
@@ -7,6 +7,8 @@ function* actionSearchUsers(action: Action) {
   try {
     if (action.detail.skipRequest) {
       yield put(LoadSearchUsers([]));
+      yield put(StopLoading('searchUsersPagination'));
+      yield put(StopLoading('searchUsers'));
       return;
     }
     if (!action.request) {
@@ -22,6 +24,8 @@ function* actionSearchUsers(action: Action) {
       params: {
         page: newPagination,
       },
+      dispatch: put,
+      loadingId: newPagination > 1 ? 'searchUsersPagination' : 'searchUsers',
     });
     const userForState: Array<SearchUser> =
       users && users.items

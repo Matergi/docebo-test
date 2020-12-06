@@ -14,7 +14,7 @@ export const StartLoading = (id: string): Action => {
   return {
     type: 'StartLoading',
     updateState: (state: State) => {
-      return {...state, loading: [...state.loading, id]};
+      return {...state, loadingIds: [...state.loadingIds, id]};
     },
   };
 };
@@ -25,7 +25,7 @@ export const StopLoading = (id: string): Action => {
     updateState: (state: State) => {
       return {
         ...state,
-        loading: state.loading.filter((loadingId) => loadingId !== id),
+        loadingIds: state.loadingIds.filter((loadingId) => loadingId !== id),
       };
     },
   };

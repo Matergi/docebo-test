@@ -18,6 +18,8 @@ import {Provider} from 'react-redux';
 import reducer from 'reducer';
 import createSagaMiddleware from 'redux-saga';
 import SagaEffects from 'sagaEffects';
+import {Platform, NativeModules} from 'react-native';
+import Language from 'strings';
 
 const composeEnhancers =
   // @ts-ignore
@@ -34,6 +36,15 @@ const enhancer = composeEnhancers(applyMiddleware(sagaMiddleware));
 const store = createStore(reducer, enhancer);
 
 sagaMiddleware.run(SagaEffects);
+
+const deviceLanguage =
+  Platform.OS === 'ios'
+    ? NativeModules.SettingsManager.settings.AppleLocale ||
+      NativeModules.SettingsManager.settings.AppleLanguages[0] // iOS 13
+    : NativeModules.I18nManager.localeIdentifier;
+
+const language = deviceLanguage.split('_')[0];
+Language.init(language);
 
 const App = () => (
   <NavigationContainer ref={Dependencies.Navigation.navigationRef}>

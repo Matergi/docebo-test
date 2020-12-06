@@ -16,6 +16,8 @@ module.exports = {
           dimensions: './src/Resources/Dimensions',
           images: './src/Resources/Images',
           themes: './src/Resources/Themes',
+          lottiefiles: './src/Resources/Lottiefiles',
+          strings: './src/Resources/Strings',
         },
       },
     ],

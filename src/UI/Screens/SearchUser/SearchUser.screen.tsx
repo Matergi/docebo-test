@@ -10,14 +10,35 @@ import type {ScreenName} from 'router';
 import ThemeContext from 'themes';
 import {SvgXml} from 'react-native-svg';
 import ArrowRight from 'images/arrowRight';
+import LottieView from 'lottie-react-native';
+import {loading} from 'lottiefiles';
+import strings from 'strings';
 
 interface Props {
   users: Array<SearchUser>;
+  loadingIds: Array<string>;
   searchUsers: (username: string, withPagination?: boolean) => void;
   changeScreen: (screen: ScreenName, idUser: string) => void;
 }
 
-const SearchUserScreen = ({searchUsers, users, changeScreen}: Props) => {
+const isCloseToBottom = ({
+  layoutMeasurement,
+  contentOffset,
+  contentSize,
+}: any) => {
+  const paddingToBottom = 20;
+  return (
+    layoutMeasurement.height + contentOffset.y >=
+    contentSize.height - paddingToBottom
+  );
+};
+
+const SearchUserScreen = ({
+  searchUsers,
+  users,
+  changeScreen,
+  loadingIds,
+}: Props) => {
   const {theme} = useContext(ThemeContext);
 
   const [username, setUsername] = useState('');
@@ -31,12 +52,29 @@ const SearchUserScreen = ({searchUsers, users, changeScreen}: Props) => {
       style={[styles.page, {backgroundColor: theme.screen.backgroundColor}]}>
       <SafeAreaView>
         <Input
-          style={styles.search}
+          style={[styles.search, theme.shadow]}
           onChange={setUsername}
-          underlineColor="#000"
-          placeholder="search user"
+          underlineColor="#ddd"
+          placeholder={strings.get().searchUser.searchPlaceHolder}
         />
-        <ScrollView>
+        <ScrollView
+          style={styles.users}
+          showsVerticalScrollIndicator={false}
+          onScroll={({nativeEvent}) => {
+            if (isCloseToBottom(nativeEvent)) {
+              searchUsers(username, true);
+            }
+          }}>
+          {loadingIds.includes('searchUsers') && (
+            <View style={styles.containerSearchUsersLoading}>
+              <LottieView
+                autoPlay
+                autoSize
+                style={styles.loadingIcon}
+                source={loading}
+              />
+            </View>
+          )}
           {users.map((user) => (
             <Press
               key={user.id}
@@ -51,16 +89,15 @@ const SearchUserScreen = ({searchUsers, users, changeScreen}: Props) => {
               <SvgXml style={styles.arrow} xml={ArrowRight} />
             </Press>
           ))}
-          {users.length > 0 && (
-            <Press
-              style={styles.loadMoreContainer}
-              onPress={() => {
-                searchUsers(username, true);
-              }}>
-              <View style={styles.loadMore}>
-                <Text style={styles.loadMoreText}>Load More</Text>
-              </View>
-            </Press>
+          {loadingIds.includes('searchUsersPagination') && (
+            <View style={styles.containerSearchUsersLoading}>
+              <LottieView
+                autoPlay
+                autoSize
+                style={styles.loadingIcon}
+                source={loading}
+              />
+            </View>
           )}
           <View style={styles.bottomSpace} />
         </ScrollView>
@@ -73,10 +110,17 @@ const styles = StyleSheet.create({
   page: {
     width: '100%',
     height: '100%',
+    padding: 10,
   },
   search: {
+    position: 'absolute',
+    zIndex: 10,
     width: '100%',
-    height: 50,
+    height: 60,
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    padding: 10,
+    top: 40,
   },
   user: {
     marginRight: 10,
@@ -103,8 +147,11 @@ const styles = StyleSheet.create({
     transform: [{scale: 1.4}],
     marginRight: 10,
   },
+  users: {
+    marginTop: 70,
+  },
   bottomSpace: {
-    height: 50,
+    height: 30,
   },
   loadMoreContainer: {
     width: '100%',
@@ -118,14 +165,24 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
     alignItems: 'center',
     justifyContent: 'center',
+    height: 40,
   },
   loadMoreText: {
     color: '#fff',
+  },
+  containerSearchUsersLoading: {
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  loadingIcon: {
+    height: 30,
   },
 });
 
 const mapStateToProps = (state: State) => ({
   users: state.searchUsers,
+  loadingIds: state.loadingIds,
 });
 
 const mapDispatchToProps = (dispatch: any) => ({

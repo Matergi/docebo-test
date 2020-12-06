@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import {StyleSheet, TextInput, View, TextStyle} from 'react-native';
+import {StyleSheet, TextInput, View} from 'react-native';
 import {font} from '../Text/Text.element';
 
 interface Props {
-  style?: TextStyle;
+  style?: any;
   color?: string;
   selectionColor?: string;
   underlineFocusColor?: string;
@@ -80,7 +80,7 @@ InputElement.defaultProps = {
 const styles = StyleSheet.create({
   inputBottomLine: {
     paddingLeft: 6,
-    borderBottomWidth: 2,
+    borderBottomWidth: 1,
     ...font,
   },
   input: {
