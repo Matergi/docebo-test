@@ -58,4 +58,5 @@ export type State = {
   userSelectedId?: string;
   userSelected?: User;
   repositories: Array<Repository>;
+  searchUsersPagination: number;
 };

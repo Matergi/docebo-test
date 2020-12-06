@@ -1,12 +1,21 @@
 import type {Action, State, SearchUser, User, Repository} from 'types';
 
-export const LoadSearchUsers = (users: Array<SearchUser>): Action => {
+export const LoadSearchUsers = (
+  users: Array<SearchUser>,
+  pagination: number = 0,
+): Action => {
   return {
     type: 'LoadSearchUsers',
     updateState: (state: State) => {
+      const searchUsers =
+        pagination > 1 ? [...state.searchUsers, ...users] : users;
       return {
         ...state,
-        searchUsers: users,
+        searchUsers: searchUsers.filter(
+          (item, pos) =>
+            searchUsers.map((user) => user.id).indexOf(item.id) === pos,
+        ),
+        searchUsersPagination: pagination,
       };
     },
   };

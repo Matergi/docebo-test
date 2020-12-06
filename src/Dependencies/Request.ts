@@ -39,6 +39,17 @@ export default async (detail: DetailRequest): Promise<any> => {
           return '';
         }
 
+        if (current === 'params' && Array.isArray(detail.query[current])) {
+          detail.query[current].forEach((key: string, indexParam: number) => {
+            if (index !== 0 || indexParam > 0) {
+              newAccumultator += '&';
+            }
+
+            newAccumultator += `${key}=${detail.params[key]}`;
+          });
+          return newAccumultator;
+        }
+
         if (index !== 0) {
           newAccumultator += '&';
         }

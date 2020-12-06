@@ -22,7 +22,7 @@ function* actionUserInfo(action: Action) {
         id: user.id,
         username: user.login,
         avatar: user.avatar_url,
-        url: user.url,
+        url: user.html_url,
         type: user.type,
         company: user.company,
         email: user.email,

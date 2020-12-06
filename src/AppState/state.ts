@@ -6,6 +6,7 @@ let state: State = {
   loading: [],
   searchUsers: [],
   repositories: [],
+  searchUsersPagination: 1,
 };
 
 export default state;

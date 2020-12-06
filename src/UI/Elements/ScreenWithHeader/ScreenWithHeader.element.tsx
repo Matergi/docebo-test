@@ -12,7 +12,7 @@ import {connect} from 'react-redux';
 import {backScreenSE} from 'sagaEffects';
 import ThemeContext from 'themes';
 import {SvgXml} from 'react-native-svg';
-import Back from 'images/back.ts';
+import Back from 'images/screen/back';
 
 interface Props {
   children: any;

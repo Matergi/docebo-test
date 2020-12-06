@@ -8,6 +8,7 @@ type Screen = {
 export type Theme = {
   colorAccent: string;
   backgroundAccent: string;
+  listShadow: ViewStyle;
   shadow: ViewStyle;
   screen: Screen;
   label: string;
@@ -32,6 +33,15 @@ export type Theme = {
 const defaultTheme: Theme = {
   colorAccent: '#160452',
   backgroundAccent: '#A6A0CC',
+  listShadow: {
+    shadowColor: 'rgba(113, 98, 227, 0.550891)',
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 10,
+  },
   shadow: {
     shadowColor: '#160452',
     shadowOffset: {
