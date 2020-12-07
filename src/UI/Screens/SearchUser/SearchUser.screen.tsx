@@ -13,6 +13,7 @@ import ArrowRight from 'images/arrowRight';
 import LottieView from 'lottie-react-native';
 import {loading} from 'lottiefiles';
 import strings from 'strings';
+import {Screen} from 'dimensions';
 
 interface Props {
   users: Array<SearchUser>;
@@ -60,6 +61,7 @@ const SearchUserScreen = ({
         <ScrollView
           style={styles.users}
           showsVerticalScrollIndicator={false}
+          scrollEventThrottle={400}
           onScroll={({nativeEvent}) => {
             if (isCloseToBottom(nativeEvent)) {
               searchUsers(username, true);
@@ -120,7 +122,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 10,
     padding: 10,
-    top: 40,
+    top: Screen.heightNavigationBar + 10,
   },
   user: {
     marginRight: 10,
@@ -148,7 +150,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   users: {
-    marginTop: 70,
+    marginTop: Screen.heightNavigationBar + 40,
   },
   bottomSpace: {
     height: 30,

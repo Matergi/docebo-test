@@ -75,6 +75,7 @@ const InputElement = (props: Props) => {
 InputElement.defaultProps = {
   editable: true,
   fontScaling: false,
+  color: '#000',
 };
 
 const styles = StyleSheet.create({

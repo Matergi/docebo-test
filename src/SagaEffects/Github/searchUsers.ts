@@ -61,7 +61,6 @@ const searchUsers = (user: string, reset: boolean) => ({
     headers: {
       Authorization: `token ${Dependencies.githubToken}`,
     },
-    debug: true,
   },
   detail: {
     reset,

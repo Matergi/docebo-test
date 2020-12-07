@@ -64,7 +64,6 @@ const repositories = () => ({
     headers: {
       Authorization: `token ${Dependencies.githubToken}`,
     },
-    debug: true,
   },
 });
 
