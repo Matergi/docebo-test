@@ -16,6 +16,8 @@ per iOS aprire XCode e aprire il file: `/ios/docebo.xcworkspace`
 # 🤳🏼 Avviare su Android
 per Android aprire Android Studio e aprire la cartella il file: `/android`
 
+![Docebo](docebo.gif)
+
 # 📖 Documentazione
 
 ### 📱 Elementi visivi
